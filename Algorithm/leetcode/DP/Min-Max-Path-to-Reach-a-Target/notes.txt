@@ -1,0 +1,17 @@
+* Statement
+Given a target find min-max cost/path/sum to reach the target.
+
+*Approach
+Choose min-max path among all possible paths before the current state, then add value for the current state
+
+routes[i] = min(routes[i-1], routes[i-2], ..., routes[i-k]) + cost[i]
+
+def Solution():
+    for (int i = 1; i <= target; i++){
+        for (int j = 0; i < ways.size(); ++j){
+            if (ways[j] <= i){
+                dp[i] = min(dp[i], dp[i - ways[j]]) + cost/path/sum;
+            }
+        }
+    }
+    return dp[target]
